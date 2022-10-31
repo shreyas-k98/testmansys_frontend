@@ -10,7 +10,7 @@ const Footer = () => {
         <div>
             <footer className='bg-dark text-light py-3' style={footerStyle}>
                 <p className='text-center'>
-                    CopyRight &copy; Nobody.com
+                    CopyRight &copy; SHREYAS KULKARNI
                 </p>
             </footer>
         </div>

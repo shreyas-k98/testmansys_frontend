@@ -39,7 +39,7 @@ const Signup = () => {
   axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
   axios.defaults.xsrfCookieName = "csrftoken";
   const signup = () => {
-    let baseurl = "http://127.0.0.1:8000/student/"
+    let baseurl = "/student/"
     axios.post(baseurl, {
       "username": username,
       "first_name": first_name,
@@ -49,7 +49,7 @@ const Signup = () => {
     })
       .then(function (response) {
         console.log(response.data)
-        navigate('/login_student')
+        navigate('/login/student')
         alert("Signup Successful !!!")
       })
       .catch(function (error) {
