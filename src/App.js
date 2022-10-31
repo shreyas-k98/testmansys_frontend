@@ -1,23 +1,22 @@
 // import React, { useState } from 'react';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import Home from './Components/Home';
-import Signup from './Components/Signup';
-import Studentlogin from './Components/Student/Studentlogin';
-import Stafflogin from './Components/Staff/Stafflogin';
-import DashBoard from './Components/Student/StudentDashBoard';
-import StudentHeader from './Components/Student/StudentHeader';
-import StudentDashBoard from "./Components/Student/StudentDashBoard"
-import StudentProfile from './Components/Student/StudentProfile';
-import StudentCourses from "./Components/Student/StudentCourses"
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import Home from "./Components/Home";
+import Signup from "./Components/Signup";
+import Studentlogin from "./Components/Student/Studentlogin";
+import Stafflogin from "./Components/Staff/Stafflogin";
+import DashBoard from "./Components/Student/StudentDashBoard";
+import StudentHeader from "./Components/Student/StudentHeader";
+import StudentDashBoard from "./Components/Student/StudentDashBoard";
+import StudentProfile from "./Components/Student/StudentProfile";
+import StudentCourses from "./Components/Student/StudentCourses";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-
           <Route
             exact
             path="student/profile"
