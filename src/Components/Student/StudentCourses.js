@@ -1,8 +1,8 @@
 import StudentHeader from "./StudentHeader";
 import Footer from "../Footer";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 const StudentCourses = () => {
@@ -43,8 +43,8 @@ const StudentCourses = () => {
         {courses.map((course) => {
           return (
             <div className="container">
-              <div className="card">
-                <div clasNames="card-body">
+              <div className="card row">
+                <div clasNames="card-body col-10">
                   <h5 clasNames="card-title">{course.course_name}</h5>
                   <p className="card-text">{course.creator_name}
                   </p>
