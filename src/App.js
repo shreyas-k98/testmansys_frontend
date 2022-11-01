@@ -5,12 +5,19 @@ import Home from "./Components/Home";
 import Signup from "./Components/Signup";
 import Studentlogin from "./Components/Student/Studentlogin";
 import Stafflogin from "./Components/Staff/Stafflogin";
-import DashBoard from "./Components/Student/StudentDashBoard";
 import StudentHeader from "./Components/Student/StudentHeader";
 import StudentDashBoard from "./Components/Student/StudentDashBoard";
 import StudentProfile from "./Components/Student/StudentProfile";
 import StudentCourses from "./Components/Student/StudentCourses";
+import EnrolledCourses from "./Components/Student/EnrolledCourses";
+import StaffHeader from "./Components/Staff/StaffHeader";
+import Tests from "./Components/Student/Tests";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import StaffDashBoard from "./Components/Staff/StaffDashBoard";
+import ViewStudents from "./Components/Staff/ViewStudents";
+import AddCourses from "./Components/Staff/AddCourses";
+import AddTest from "./Components/Staff/AddTest";
+import AddQuestion from "./Components/Staff/AddQuestion";
 
 function App() {
   return (
@@ -36,7 +43,51 @@ function App() {
               </div>
             }
           />
-
+          <Route
+            exact
+            path="/course/add"
+            element={
+              <div>
+                <AddCourses />
+              </div>
+            }
+          />
+          <Route
+            exact
+            path="/question/add"
+            element={
+              <div>
+                <AddQuestion />
+              </div>
+            }
+          />
+          <Route
+            exact
+            path="/test/add"
+            element={
+              <div>
+                <AddTest />
+              </div>
+            }
+          />
+          <Route
+            exact
+            path="student/courses_enrolled"
+            element={
+              <div>
+                <EnrolledCourses />
+              </div>
+            }
+          />
+          <Route
+            exact
+            path="student/tests"
+            element={
+              <div>
+                <Tests />
+              </div>
+            }
+          />
           <Route
             exact
             path="/"
@@ -63,6 +114,18 @@ function App() {
 
           <Route
             exact
+            path="/student/view"
+            element={
+              <div>
+                <StaffHeader />
+                <ViewStudents />
+                <Footer />
+              </div>
+            }
+          />
+
+          <Route
+            exact
             path="/login/student"
             element={
               <div>
@@ -75,11 +138,11 @@ function App() {
 
           <Route
             exact
-            path="/staff_dashboard"
+            path="/staff/dashboard"
             element={
               <div>
-                <Header navbar_title="Staff Dashboard" />
-                <DashBoard />
+                <StaffHeader />
+                <StaffDashBoard />
                 <Footer />
               </div>
             }
