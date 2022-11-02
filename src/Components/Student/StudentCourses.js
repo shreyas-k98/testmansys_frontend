@@ -2,6 +2,7 @@ import StudentHeader from "./StudentHeader";
 import Footer from "../Footer";
 import React, { useState } from "react";
 import axios from "axios";
+import { useEffect } from "react";
 // import { Link } from "react-router-dom";
 
 
@@ -11,30 +12,15 @@ const StudentCourses = () => {
     localStorage.getItem("csrf_token");
 
     let baseurl = "/course/";
-    axios.get(baseurl).then((responce) => {
+    useEffect(() => {
+      axios.get(baseurl).then((responce) => {
       let courses = responce.data
       setCourses(courses)
   
     });
+    }, []);
 
-    // useEffect = () => {
-    //   enroll(course.course_name)
-    // }
 
-  // const enroll = (course_name) => {
-  //   let baseurl = "/enroll/";
-  //   axios
-  //     .post(baseurl, {
-  //       "course_enrolled": course_name,
-  //     })
-  //     .then(function (response) {
-  //       console.log(response.data);
-  //       alert("Enrolled !!!");
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // };
 
   return (
     <div>

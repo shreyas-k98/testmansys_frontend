@@ -81,6 +81,15 @@ function App() {
           />
           <Route
             exact
+            path="/student/tests"
+            element={
+              <div>
+                <Tests />
+              </div>
+            }
+          />
+          <Route
+            exact
             path="student/tests"
             element={
               <div>
@@ -94,7 +103,7 @@ function App() {
             element={
               <div>
                 <Header />
-                <Home />
+                <Signup />
                 <Footer />
               </div>
             }
@@ -141,9 +150,7 @@ function App() {
             path="/staff/dashboard"
             element={
               <div>
-                <StaffHeader />
-                <StaffDashBoard />
-                <Footer />
+                <AddTest />
               </div>
             }
           />
@@ -153,9 +160,7 @@ function App() {
             path="/student/dashboard"
             element={
               <div>
-                <StudentHeader />
-                <StudentDashBoard />
-                <Footer />
+                <StudentProfile />
               </div>
             }
           />
