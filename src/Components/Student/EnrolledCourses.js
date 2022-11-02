@@ -5,10 +5,24 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Tests from "./Tests";
 
 const EnrolledCourses = () => {
   const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
+  const [showTest, setShowTest] = useState(false);
+
+  const showTestFunc = () => {
+    if(showTest){
+      console.log("Func call")
+      return (
+        <div>
+          <Tests />
+        </div>
+      )
+    }
+  }
+
   axios.defaults.headers.common["csrftoken"] =
     localStorage.getItem("csrf_token");
 
@@ -33,7 +47,11 @@ const EnrolledCourses = () => {
                 <h5 clasNames="card-title">{course.course_name}</h5>
                 <Link
                   onClick={() => {
-                    navigate("student/tests/");
+                    // navigate("student/tests/");
+                    {
+                      setShowTest(true);
+                      showTestFunc()
+                    }
                   }}
                   className="btn btn-success"
                 >

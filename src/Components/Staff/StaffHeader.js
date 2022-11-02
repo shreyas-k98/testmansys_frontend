@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const StaffHeader = () => {
+
+  let username = localStorage.getItem("username")
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/staff/dashboard">
-            Staff DashBoard
+            Wellcome, {username}
           </Link>
           <button
             className="navbar-toggler"

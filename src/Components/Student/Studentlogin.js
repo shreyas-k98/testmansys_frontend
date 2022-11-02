@@ -56,6 +56,7 @@ const Studentlogin = () => {
       .then(function (response) {
         var csrf_token = getCookie('csrftoken');
         localStorage.setItem("csrf_token", csrf_token)
+        localStorage.setItem("username", username)
         console.log(response.data)
         console.log(response.headers)
         navigate('/student/dashboard')
