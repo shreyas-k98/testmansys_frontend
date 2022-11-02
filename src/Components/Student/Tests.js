@@ -2,11 +2,9 @@ import React from "react";
 import StudentHeader from "./StudentHeader";
 import Footer from "../Footer";
 import axios from "axios";
-import { useState } from "react";
-// import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Test from "./Test";
-// import { Route, } from "react-router-dom";
 
 const Tests = () => {
   const navigate = useNavigate();
@@ -15,10 +13,13 @@ const Tests = () => {
     localStorage.getItem("csrf_token");
 
   let baseurl = "/course/test/";
-  axios.get(baseurl).then((responce) => {
-    let tests = responce.data;
-    setTests(tests);
-  });
+
+  useEffect(() => {
+    axios.get(baseurl).then((responce) => {
+      let tests = responce.data;
+      setTests(tests);
+    });
+  }, [])
 
   return (
     <div>
@@ -39,7 +40,8 @@ const Tests = () => {
                   //       <Test test_id = {test.id}/>
                   //   )
                   // }}
-                  herf = { <Test test_id = {test.id} />}
+                  // herf = { <Test test_id = {test.id} />}
+                  onClick={() => {<Test test_id = {test.id} />}}
                   className="btn btn-success"
                 >
                   Start Test

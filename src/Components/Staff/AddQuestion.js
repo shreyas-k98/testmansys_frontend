@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Footer from "../Footer";
 import StaffHeader from "./StaffHeader";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const AddQuestion = () => {
 
@@ -46,6 +45,13 @@ const AddQuestion = () => {
           .then(function (response) {
             console.log(response)
             alert("Question Added Sucessfuly !!!")
+            setQuestion("")
+            setOption1("")
+            setOption2("")
+            setOption3("")
+            setOption4("")
+            setAnswer("")
+            setTestRelated("")
           })
           .catch(function (error) {
            console.log(error)
