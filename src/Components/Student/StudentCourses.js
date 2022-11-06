@@ -31,7 +31,7 @@ const StudentCourses = () => {
               <div className="card row">
                 <div clasNames="card-body col-10">
                   <h5 clasNames="card-title">{course.course_name}</h5>
-                  <p className="card-text">{course.creator_name}
+                  <p className="card-text">Created By : <b>{course.creator_name}</b> 
                   </p>
                   <button onClick = {()=>{
                       let baseurl = "/course/enroll/";

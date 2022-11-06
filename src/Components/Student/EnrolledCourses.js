@@ -3,7 +3,7 @@ import StudentHeader from "./StudentHeader";
 import Footer from "../Footer";
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Tests from "./Tests";
 
@@ -13,15 +13,15 @@ const EnrolledCourses = () => {
   const [showTest, setShowTest] = useState(false);
 
   const showTestFunc = () => {
-    if(showTest){
-      console.log("Func call")
+    if (showTest) {
+      console.log("Func call");
       return (
         <div>
           <Tests />
         </div>
-      )
+      );
     }
-  }
+  };
 
   axios.defaults.headers.common["csrftoken"] =
     localStorage.getItem("csrf_token");
@@ -45,23 +45,25 @@ const EnrolledCourses = () => {
             <div className="card row">
               <div clasNames="card-body col-10">
                 <h5 clasNames="card-title">{course.course_name}</h5>
-                <Link
+                <button
                   onClick={() => {
-                    // navigate("student/tests/");
                     {
                       setShowTest(true);
-                      showTestFunc()
+                      localStorage.setItem("course_id", course.course_enrolled);
+                      localStorage.setItem("course_name", course.course_name)
+                      navigate("/student/tests");
                     }
                   }}
                   className="btn btn-success"
                 >
                   View Tests
-                </Link>
+                </button>
               </div>
             </div>
           </div>
         );
       })}
+      {/* {showTest && showTestFunc()} */}
       <Footer />
     </div>
   );

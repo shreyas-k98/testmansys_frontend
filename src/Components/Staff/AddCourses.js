@@ -24,6 +24,11 @@ const AddCourses = () => {
   return (
     <div>
       <StaffHeader />
+      <div className="text-center">
+        <br />
+        <h3> Add Course </h3>
+        <hr />
+      </div>
       <div className="container"><br />
         <label htmlFor="exampleInputEmail1" className="form-label">
           Add Course Name

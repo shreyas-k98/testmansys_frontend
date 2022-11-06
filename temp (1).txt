@@ -1,0 +1,36 @@
+import StudentHeader from "./StudentHeader";
+import Footer from "../Footer";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+
+const StudentCourses = () => {
+  const [courses, setCourses] = useState([]);
+  axios.defaults.headers.common["csrftoken"] =
+    localStorage.getItem("csrf_token");
+
+  let baseurl = "/course/";
+  axios.get(baseurl).then((responce) => {
+    let courses = responce.data
+    setCourses(courses)
+
+  });
+
+  const enroll = (course_name) => {
+    let baseurl = "/login/";
+    axios
+      .post(baseurl, {
+        course_enrolled: course_name,
+      })
+      .then(function (response) {
+        console.log(response.data);
+        alert("Enrolled !!!");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    return (
+    
+    )
+export default StudentCourses;
