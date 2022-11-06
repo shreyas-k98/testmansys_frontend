@@ -23,7 +23,7 @@ const Tests = () => {
       <StudentHeader />
       <div className="text-center">
         <br />
-        <h3>{course_name} Tests </h3>
+        <h3>{course_name} Tests</h3>
         <hr />
       </div>
       <div className="container">
