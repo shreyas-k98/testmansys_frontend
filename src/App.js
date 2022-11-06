@@ -90,15 +90,6 @@ function App() {
           />
           <Route
             exact
-            path="student/tests"
-            element={
-              <div>
-                <Tests />
-              </div>
-            }
-          />
-          <Route
-            exact
             path="/"
             element={
               <div>

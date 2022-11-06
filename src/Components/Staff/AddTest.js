@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const AddTest = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [courses, setCourse] = useState([]);
   const [test_name, setTestName] = useState("");
   const [duration, setDuration] = useState(0);
@@ -31,24 +31,28 @@ const AddTest = () => {
     let baseurl = "/course/test/";
     axios
       .post(baseurl, {
-        "test_name": test_name,
-        "duration": duration_in_seconds,
-        "course_related": course_related,
+        test_name: test_name,
+        duration: duration_in_seconds,
+        course_related: course_related,
       })
       .then(function (response) {
-        console.log(response.data)
-        alert("Test Added Successfully !!!")
-        navigate('/question/add')
+        console.log(response.data);
+        alert("Test Added Successfully !!!");
+        navigate("/question/add");
       })
       .catch(function (error) {
-        console.log(error)
+        console.log(error);
       });
   };
   return (
     <div>
       <StaffHeader />
-      <div className="container">
+      <div className="text-center">
+        <br />
         <h3> Add Test </h3>
+        <hr />
+      </div>
+      <div className="container">
         <label htmlFor="exampleInputEmail1" className="form-label">
           Test Name
         </label>
@@ -75,15 +79,13 @@ const AddTest = () => {
         />
         <br />
         <label>For Course :</label>
-        <select className="form-select" aria-label="Default select example" onChange={(e) => setCourseRelated(e.target.value)}>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          onChange={(e) => setCourseRelated(e.target.value)}
+        >
           {courses.map((course) => {
-            return (
-              <option
-                value={course.id}
-              >
-                {course.course_name}
-              </option>
-            );
+            return <option value={course.id}>{course.course_name}</option>;
           })}
         </select>
         <br />

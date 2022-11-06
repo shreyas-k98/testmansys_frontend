@@ -60,9 +60,13 @@ const AddQuestion = () => {
   return (
     <div>
       <StaffHeader />
+      <div className="text-center">
+        <br />
+        <h3> Add Question </h3>
+        <hr />
+      </div>
       <div className="container">
         <div className="container">
-          <h3> Add Question </h3>
           <label htmlFor="exampleInputEmail1" className="form-label">
             Question
           </label>
