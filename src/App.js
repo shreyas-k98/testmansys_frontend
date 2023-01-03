@@ -20,6 +20,7 @@ import AddTest from "./Components/Staff/AddTest";
 import AddQuestion from "./Components/Staff/AddQuestion";
 
 function App() {
+  console.log("Hello !!!")
   return (
     <div className="App">
       <Router>
